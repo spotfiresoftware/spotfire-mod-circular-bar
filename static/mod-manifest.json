@@ -1,0 +1,133 @@
+{
+    "apiVersion": "1.2",
+    "version": "1.1.0",
+    "name": "Circular Bar Chart",
+    "id": "spotfire-circular-barchart-mod",
+    "icon": "icon.svg",
+    "properties": [
+        {
+            "name": "vegaSpec1",
+            "type": "string",
+            "defaultValue": ""
+        },
+        {
+            "name": "vegaSpec2",
+            "type": "string",
+            "defaultValue": ""
+        },
+        {
+            "name": "dataSpec1",
+            "type": "string",
+            "defaultValue": ""
+        },
+        {
+            "name": "dataSpec2",
+            "type": "string",
+            "defaultValue": ""
+        },
+        {
+            "name": "isEditorShown",
+            "type": "boolean",
+            "defaultValue": true
+        },
+        {
+            "name": "startAngle",
+            "type": "double",
+            "defaultValue": "-2.5"
+        },
+        {
+            "name": "endAngle",
+            "type": "double",
+            "defaultValue": "2.5"
+        },
+        {
+            "name": "padAngle",
+            "type": "double",
+            "defaultValue": "0"
+        },
+        {
+            "name": "bandPadding",
+            "type": "double",
+            "defaultValue": "0.15"
+        },
+        {
+            "name": "innerRadius",
+            "type": "double",
+            "defaultValue": "60"
+        },
+        {
+            "name": "cornerRadius",
+            "type": "double",
+            "defaultValue": "0"
+        },
+        {
+            "name": "offset",
+            "type": "string",
+            "defaultValue": "zero"
+        }
+    ],
+    "dataViewDefinition": {
+        "colorAxis": {
+            "mode": "dual",
+            "dropTarget": {
+                "icon": "Color",
+                "description": "Color by {0}"
+            }
+        },
+        "axes": [
+            {
+                "name": "X",
+                "mode": "dual",
+                "placement": "bottom",
+                "dropTarget": {
+                    "icon": "XAxis3D",
+                    "description": "Use {0} on the mod's X-axis"
+                },
+                "propertyControl": {
+                    "title": "X-axis"
+                },
+                "legendItem": {
+                    "title": "X-axis",
+                    "defaultVisibility": "hidden"
+                }, "allowNonAggregatingMeasures": true
+            },
+            {
+                "name": "GroupBy",
+                "mode": "categorical",
+                "placement": "none",
+                "dropTarget": {
+                    "icon": "XAxis3D",
+                    "description": "Use {0} on the mod's X-axis"
+                },
+                "propertyControl": {
+                    "title": "GroupBy-axis"
+                },
+                "legendItem": {
+                    "title": "GroupBy-axis",
+                    "defaultVisibility": "hidden"
+                }
+            },
+            {
+                "name": "Y",
+                "mode": "continuous",
+                "allowMultipleMeasures": true,
+                "placement": "left",
+                "propertyControl": {
+                    "title": "Y-axis"
+                },
+                "legendItem": {
+                    "title": "Y-axis",
+                    "defaultVisibility": "hidden"
+                },
+                "allowNonAggregatingMeasures": true
+            }
+        ]
+    },
+    "files": [
+        "index.html",
+        "main.css",
+        "bootstrap.bundle.min.js",
+        "bootstrap.min.css",
+        "bundle.js"
+    ]
+}

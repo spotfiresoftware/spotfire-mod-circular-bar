@@ -1,0 +1,240 @@
+/*
+* Copyright © 2024. Cloud Software Group, Inc.
+* This file is subject to the license terms contained
+* in the license file that is distributed with this file.
+*/
+
+html,
+body,
+#mod-container {
+    margin: 0;
+    overflow: hidden;
+}
+
+#mod-container {
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.line-hover {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.line-hover-fill {
+    pointer-events: none;
+    stroke: #fff;
+    stroke-width: 5px;
+}
+
+.line-hover-casing {
+    pointer-events: none;
+    stroke: #333;
+    stroke-width: 7px;
+}
+
+.line-hover-bg {
+    stroke: #333;
+    stroke-opacity: 0;
+    stroke-width: 7px;
+}
+
+.selection {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    border: 1px solid #677085;
+    background-color: rgba(0, 90, 230, 0.17);
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+}
+
+.selection-bg {
+    visibility: hidden;
+    position: absolute;
+    background-color: rgba(200, 90, 230, 0);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+.selection-rect {
+    visibility: visible;
+    position: absolute;
+    background-color: rgba(200, 90, 230, 0);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.x-axis-label-container {
+    position: absolute;
+    cursor: pointer;
+}
+
+.x-axis-label-container:hover>.x-axis-label-background {
+    opacity: 0.085;
+}
+
+.x-axis-label-background {
+    position: absolute;
+    height: 24px;
+    border-radius: 4px;
+    opacity: 0;
+}
+
+.x-axis-label-parent {
+    position: absolute;
+    /* pointer-events: none; */
+}
+
+.x-axis-label {
+    /* pointer-events: none; */
+    position: relative;
+    top: 4px;
+    left: -50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.mark-arc path {
+    transition: stroke 0.3s ease;
+}
+
+/* .mark-arc path:hover {
+    stroke: black;
+    stroke-width: 1px;
+    margin: 5px;
+} */
+
+#dropdown-menu-button-1 {
+    cursor: pointer;
+}
+
+
+.dropdown-container {
+    position: fixed;
+    right: 0px;
+    top: -5px;
+    height: 100%;
+    visibility: visible;
+}
+
+.removecaret.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown {
+    height: 90%;
+}
+
+.stroke-array-dropdown-highlighted {
+    color: #16181b !important;
+    text-decoration: none;
+    background-color: #bdbebe !important;
+}
+
+#settings-menu {
+    overflow: auto;
+    max-height: 100%;
+    font-size: small !important;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+
+    border-style: Solid;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    background-color: #F8F8F8;
+    border-top-color: #C6C8CC;
+    border-right-color: #C6C8CC;
+    border-bottom-color: #C6C8CC;
+    border-left-color: #C6C8CC;
+
+}
+
+::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 8px;
+    background-clip: content-box;
+    background-image: linear-gradient(to right, #C6C8CC, #C6C8CC);
+}
+
+::-webkit-scrollbar-button:single-button {
+    background-size: 10px;
+    background-repeat: no-repeat;
+    border-style: Solid;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    background-color: #F8F8F8;
+    border-top-color: #C6C8CC;
+    border-right-color: #C6C8CC;
+    border-bottom-color: #C6C8CC;
+    border-left-color: #C6C8CC;
+}
+
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    height: 12px;
+    width: 15px;
+    background-position: center 3px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' fill='rgb(223,225,227)'><polygon points='37,00 0,37 75,37'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' fill='rgb(112, 112, 112)'><polygon points='37,00 0,37 75,37'/></svg>");
+}
+
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    height: 12px;
+    width: 15px;
+    background-position: center 3px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' fill='rgb(223,225,227)'><polygon points='0,0 75,0 37,37'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='75' height='75' fill='rgb(112, 112, 112)'><polygon points='0,0 75,0 37,37'/></svg>");
+}
+
+#modalscontainer {
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.stroke-array-dropdown-highlighted {
+    color: #16181b !important;
+    text-decoration: none;
+    background-color: #bdbebe !important;
+}
