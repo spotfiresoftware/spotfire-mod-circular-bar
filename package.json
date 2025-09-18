@@ -15,7 +15,7 @@
         "buffer": "^6.0.3",
         "d3-simple-slider": "^2.0.0",
         "live-server": "^1.1.0",
-        "ts-loader": "^9.4.2",
+        "ts-loader": "^9.5.2",
         "ts-transformer-keys": "^0.4.4"
     },
     "devDependencies": {
